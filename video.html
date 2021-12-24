@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoCommunity</title>
+
+    <link rel="stylesheet" href="css/video_style.css">
+    <link rel="stylesheet" href="css/stylee.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@700&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="montserrat">
+        <div class="logo">
+            <a id="nav_header" href="index.html"><h4>AutoCommunity</h4></a>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="news.html">Новости</a>
+            </li>
+            <li>
+                <a href="bortzhurnaly.html">Бортжурналы</a>
+            </li>
+            <li>
+                <a href="video.html">Видео</a>
+            </li>
+            <li>
+                <a href="stoit_prochitat.html">Стоит прочитать</a>
+            </li>
+            <li>
+                <div class="voiti__btn"><a id="voiti" href="login.html">Войти</a></div>
+            </li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <h3 class="heading montserrat">Видео</h3>
+
+    
+
+    <div class="container open_sans">
+        <div class="main-video">
+            <div class="video">
+                <iframe height="400" src="https://www.youtube.com/embed/5SqYVEreBJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title_v">01. Новая AUDI RS6 - уже не конкурент M5 и E63: ЛУЧШЕ или ХУЖЕ?</h3>
+            </div>
+        </div>
+
+        <div class="video-list">
+            <div class="vid active">
+                <iframe height="150" src="https://www.youtube.com/embed/5SqYVEreBJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title_v">01. Новая AUDI RS6 - уже не конкурент M5 и E63: ЛУЧШЕ или ХУЖЕ?</h3>
+            </div>
+            <div class="vid">
+                <iframe height="150" src="https://www.youtube.com/embed/3IYCi-JqTzc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title_v">02. Проект 1000 л.с. V-CLASS! </h3>
+            </div>
+            <div class="vid">
+                <iframe height="150" src="https://www.youtube.com/embed/Ud5x2q1biWo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title_v">03.  Bugatti CHIRON за ₽ 300 млн.</h3>
+            </div>
+            <div class="vid">
+                <iframe height="150" src="https://www.youtube.com/embed/Yd-14ByzP8s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title_v">04. Porsche Panamera Turbo S</h3>
+            </div>
+            <div class="vid">
+                <iframe height="150" src="https://www.youtube.com/embed/9RJpfxCJy_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title_v">05. 650 л.с. MANSORY CULLINAN</h3>
+            </div>
+            <div class="vid">
+                <iframe height="150" src="https://www.youtube.com/embed/Ph2tyJIMBAk?start=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title_v">06. 800 Л.С. AMG! S-Class Coupe?</h3>
+            </div>
+            <div class="vid">
+                <iframe height="150" src="https://www.youtube.com/embed/Ar92d647ht0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h3 class="title_v">07. Mercedes-Benz G500 4x4</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let lastVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video iframe');
+        let title = document.querySelector('.main-video .title_v');
+
+        lastVideo.forEach(iframe =>{
+            iframe.onclick = () => {
+                lastVideo.forEach(vid => vid.classList.remove('active'));
+                iframe.classList.add('active');
+                if(iframe.classList.contains('active')){
+                    let src = iframe.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = iframe.children[1].innerHTML;
+                    title.innerHTML = text;
+                };
+            };
+        });
+    </script>
+
+    <div class="footer">
+        <div class="footer__in open_sans">
+            <p id="footer__h4">© 2021 AutoCommunity by ABC group </з>
+            <a id="footer__link" href="footer.html"><p id="footer__h4">Помощь</p></a>
+            <a id="footer__link" href="footer.html"><p id="footer__h4">Контакты</p></a>
+            <a id="footer__link" href="footer.html"><p id="footer__h4">О нас</p></a>
+        </div>
+    </div>   
+
+    <script src="video.html"></script>
+    <script src="script.js"></script>
+</body>
+</html>
